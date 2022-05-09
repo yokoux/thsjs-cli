@@ -18,6 +18,6 @@
 - `packages/create-thsjs/template-*`
 - `packages/thsjs` 
 
-    ps: I assume the tech-stack is based on `webpack5`, `babel`. The `start` command will run a webpack server.
+    ps: I presume the tech-stack is based on `webpack5`, `babel`. The `start` command will run a webpack server.
 
      
