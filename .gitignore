@@ -9,6 +9,6 @@ temp
 explorations
 .idea
 *.local
-/packages/vite/LICENSE
+/packages/**/LICENSE
 *.cpuprofile
 /.vscode/

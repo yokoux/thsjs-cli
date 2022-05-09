@@ -25,15 +25,6 @@ function App() {
           >
             Learn React
           </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
         </p>
       </header>
     </div>
