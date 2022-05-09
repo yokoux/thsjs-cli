@@ -1,0 +1,33 @@
+{
+  "name": "thsjs",
+  "version": "0.0.1",
+  "author": "",
+  "license": "ISC",
+  "main": "index.js",
+  "bin": {
+    "ths": "bin/ths.js"
+  },
+  "types": "",
+  "files": [
+    "bin"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "peerDependencies": {
+    "less": "*",
+    "sass": "*",
+    "stylus": "*"
+  },
+  "peerDependenciesMeta": {
+    "sass": {
+      "optional": true
+    },
+    "stylus": {
+      "optional": true
+    },
+    "less": {
+      "optional": true
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "create-thsjs",
+  "version": "0.0.1-dev",
+  "author": "Kelvin Y",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
+  "main": "bin/index.js",
+  "bin": {
+    "create-thsjs": "bin/index.js",
+    "cta": "bin/index.js"
+  },
+  "files": [
+    "bin",
+    "template-*"
+  ],
+  "engines": {
+    "node": ">=14.6.0"
+  },
+  "devDependencies": {
+    "@types/minimist": "^1.2.2",
+    "@types/prompts": "^2.0.14",
+    "kolorist": "^1.5.1",
+    "minimist": "^1.2.6",
+    "prompts": "^2.4.2"
+  }
+}
