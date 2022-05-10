@@ -1,12 +1,63 @@
 {
-  "name": "template-react",
+  "name": "templeate-react",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --config webpack.common.js",
+    "start": "webpack serve --config webpack.dev.js",
+    "release": "webpack --config webpack.prod.js",
+    "prepare": "husky install",
+    "lint": "lint-staged"
   },
-  "keywords": [],
-  "author": "",
+  "lint-staged": {
+    "./src/*.{js,jsx,json}": [
+      "prettier --write",
+      "eslint",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-redux": "^8.0.1",
+    "react-router-dom": "^6.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.10",
+    "@babel/plugin-transform-runtime": "^7.17.10",
+    "@babel/preset-env": "^7.17.10",
+    "@commitlint/cli": "^16.2.4",
+    "@commitlint/config-conventional": "^16.2.4",    
+    "autoprefixer": "^10.4.7",
+    "babel-loader": "^8.2.5",
+    "css-loader": "^6.7.1",
+    "eslint": "^8.15.0",
+    "eslint-plugin-react": "^7.29.4",
+    "lint-staged": "^12.4.1",
+    "postcss-loader": "^6.2.1",
+    "prettier": "^2.6.2",
+    "progress-bar-webpack-plugin": "^2.1.0",
+    "speed-measure-webpack-plugin": "^1.5.0",
+    "style-loader": "^3.3.1",
+    "ts-loader": "^9.3.0",
+    "webpack": "^5.72.1",
+    "webpack-bundle-analyzer": "^4.5.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.9.0",
+    "webpack-merge": "^5.8.0",
+    "@babel/preset-react": "^7.16.7",
+    "chalk": "^4.1.2",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-minimizer-webpack-plugin": "^3.4.1",
+    "eslint-config-prettier": "^8.5.0",
+    "glob": "^8.0.1",
+    "html-webpack-plugin": "^5.5.0",
+    "husky": "^8.0.1",
+    "mddir": "^1.1.1",
+    "mini-css-extract-plugin": "^2.6.0",
+    "sass": "^1.51.0",
+    "purgecss-webpack-plugin": "^4.1.3",    
+    "sass-loader": "^12.6.0",
+    "postcss":"^8.4.13"
+  },
   "license": "ISC"
 }

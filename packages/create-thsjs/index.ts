@@ -43,6 +43,11 @@ const TEMPLATES = FRAMEWORKS.map(
 
 const renameFiles: { [key: string]: string } = {
   _gitignore: ".gitignore",
+  _babelrc: ".babelrc",
+  "_eslintrc.js": ".eslintrc.js",
+  "_eslintignore": ".eslintignore",
+  "_prettierignore": ".prettierignore",
+  "_prettierrc.js": ".prettierrc.js"
 };
 
 async function init() {
