@@ -40,6 +40,11 @@ const FRAMEWORKS = [
 const TEMPLATES = FRAMEWORKS.map((f) => (f.variants && f.variants.map((v) => v.name)) || [f.name]).reduce((a, b) => a.concat(b), []);
 const renameFiles = {
     _gitignore: ".gitignore",
+    _babelrc: ".babelrc",
+    "_eslintrc.js": ".eslintrc.js",
+    "_eslintignore": ".eslintignore",
+    "_prettierignore": ".prettierignore",
+    "_prettierrc.js": ".prettierrc.js"
 };
 function init() {
     return __awaiter(this, void 0, void 0, function* () {

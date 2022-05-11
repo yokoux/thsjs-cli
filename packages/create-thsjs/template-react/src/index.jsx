@@ -1,12 +1,12 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom/client'
 
-import '@styles/index.scss'
+import 'styles/index.scss'
 
 const App = () => {
   return <div>hello world</div>
 }
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+ReactDOM.createRoot(document.getElementById("app")).render(
   <React.StrictMode><App /></React.StrictMode>
 );

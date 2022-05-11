@@ -16,12 +16,12 @@ module.exports = {
   
   resolve: {
     alias: {
-      "@/": path.resolve(__dirname, "src"),
-      "@utils/": path.resolve(__dirname, "src/utils/"),
-      "@components/": path.resolve(__dirname, "src/components"),
-      "@styles/": path.resolve(__dirname, "src/styles/"),
+      src: path.resolve(__dirname, "src/"),
+      utils: path.resolve(__dirname, "src/utils/"),
+      components: path.resolve(__dirname, "src/components/"),
+      styles: path.resolve(__dirname, "src/styles/"),
     },
-    extensions: ['.ts', '.tsx', '.js', '.json'],
+    extensions: ['.jsx', '.js', '.json'],
   },
   
   mode: "development",
