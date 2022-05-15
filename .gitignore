@@ -12,3 +12,4 @@ explorations
 /packages/**/LICENSE
 *.cpuprofile
 /.vscode/
+demo*

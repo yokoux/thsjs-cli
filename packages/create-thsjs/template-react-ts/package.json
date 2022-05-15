@@ -2,9 +2,9 @@
   "name": "templeate-react-typescript",
   "version": "1.0.0",
   "scripts": {
-    "build": "webpack --config webpack.common.js",
-    "start": "webpack serve --config webpack.dev.js",
-    "release": "webpack --config webpack.prod.js",
+    "build": "ths build --config ths.config.js",
+    "start": "ths serve --config ths.config.js",
+    "release": "ths release --config ths.config.js",
     "prepare": "husky install",
     "lint": "lint-staged"
   },

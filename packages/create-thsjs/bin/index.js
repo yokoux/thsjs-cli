@@ -101,19 +101,21 @@ function init() {
                         };
                     }),
                 },
-                {
-                    type: (framework) => framework && framework.variants ? "select" : null,
-                    name: "variant",
-                    message: (0, kolorist_1.reset)("Select a variant:"),
-                    // @ts-ignore
-                    choices: (framework) => framework.variants.map((variant) => {
-                        const variantColor = variant.color;
-                        return {
-                            title: variantColor(variant.name),
-                            value: variant.name,
-                        };
-                    }),
-                },
+                // {
+                //   type: (framework) =>
+                //     framework && framework.variants ? "select" : null,
+                //   name: "variant",
+                //   message: reset("Select a variant:"),
+                //   // @ts-ignore
+                //   choices: (framework) =>
+                //     framework.variants.map((variant: any) => {
+                //       const variantColor = variant.color;
+                //       return {
+                //         title: variantColor(variant.name),
+                //         value: variant.name,
+                //       };
+                //     }),
+                // },
             ], {
                 onCancel: () => {
                     throw new Error((0, kolorist_1.red)("✖") + " Operation cancelled");
@@ -125,7 +127,7 @@ function init() {
             return;
         }
         // user choice associated with prompts
-        const { framework, overwrite, packageName, variant } = result;
+        const { framework, overwrite, packageName } = result;
         const root = (0, path_1.join)(cwd, targetDir);
         if (overwrite) {
             emptyDir(root);
@@ -134,9 +136,9 @@ function init() {
             (0, fs_1.mkdirSync)(root);
         }
         // determine template
-        template = variant || framework || template;
+        template = framework.name || template;
         console.log(`\nScaffolding project in ${root}...`);
-        const templateDir = (0, path_1.join)(__dirname, `../template-${template}`);
+        const templateDir = (0, path_1.join)(__dirname, `../template-${template}-ts`);
         const write = (file, content) => {
             const targetPath = renameFiles[file]
                 ? (0, path_1.join)(root, renameFiles[file])

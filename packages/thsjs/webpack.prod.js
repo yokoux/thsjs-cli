@@ -8,23 +8,24 @@ const PurgeCSSPlugin = require("purgecss-webpack-plugin");
 const glob = require("glob");
 const BundleAnalyzerPlugin =
   require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+  const cwd = process.cwd()
+
+
 module.exports = merge(common, {
-  mode: "production",
-  entry: path.resolve(__dirname, "./src/index.tsx"),
+  entry: path.resolve(cwd, "./src/index.tsx"),
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(cwd, "dist"),
     filename: "[name].[chunkhash:8].js",
     clean: true, 
   },
   module: {
     rules: [
       {
-        test: /\.s?css$/,
-        
+        test: /\.s?css$/,        
         use: [
           MiniCssExtractPlugin.loader,
           "css-loader",
-          "postcss-loader",
+          'postcss-loader',
           "sass-loader",
         ],
       },
@@ -32,12 +33,11 @@ module.exports = merge(common, {
   },
   plugins: [
     new BundleAnalyzerPlugin(), 
-    new MiniCssExtractPlugin({
-      
+    new MiniCssExtractPlugin({      
       filename: "[name].[chunkhash:8].css",
     }),
     new PurgeCSSPlugin({ 
-      paths: glob.sync(`${path.resolve(__dirname, "src")}`, {
+      paths: glob.sync(`${path.resolve(cwd, "src")}`, {
         nodir: true,
       }),
     }),

@@ -115,21 +115,21 @@ async function init() {
             };
           }),
         },
-        {
-          type: (framework) =>
-            framework && framework.variants ? "select" : null,
-          name: "variant",
-          message: reset("Select a variant:"),
-          // @ts-ignore
-          choices: (framework) =>
-            framework.variants.map((variant: any) => {
-              const variantColor = variant.color;
-              return {
-                title: variantColor(variant.name),
-                value: variant.name,
-              };
-            }),
-        },
+        // {
+        //   type: (framework) =>
+        //     framework && framework.variants ? "select" : null,
+        //   name: "variant",
+        //   message: reset("Select a variant:"),
+        //   // @ts-ignore
+        //   choices: (framework) =>
+        //     framework.variants.map((variant: any) => {
+        //       const variantColor = variant.color;
+        //       return {
+        //         title: variantColor(variant.name),
+        //         value: variant.name,
+        //       };
+        //     }),
+        // },
       ],
       {
         onCancel: () => {
@@ -143,7 +143,7 @@ async function init() {
   }
 
   // user choice associated with prompts
-  const { framework, overwrite, packageName, variant } = result;
+  const { framework, overwrite, packageName } = result;
 
   const root = join(cwd, targetDir);
 
@@ -154,11 +154,11 @@ async function init() {
   }
 
   // determine template
-  template = variant || framework || template;
+  template =  framework.name || template;
 
   console.log(`\nScaffolding project in ${root}...`);
 
-  const templateDir = join(__dirname, `../template-${template}`);
+  const templateDir = join(__dirname, `../template-${template}-ts`);
 
   const write = (file: string, content?: string) => {
     const targetPath = renameFiles[file]

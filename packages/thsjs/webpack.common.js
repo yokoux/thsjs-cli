@@ -3,32 +3,30 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const chalk = require('chalk')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
+const cwd = process.cwd()
 
 module.exports = {
-  entry: path.resolve(__dirname, './src/index.tsx'),
+  entry: path.resolve(cwd, './src/index.tsx'),
 
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(cwd, 'dist'),
     filename: '[name].[contenthash:8].js'
   },
 
   resolve: {
-    alias: {
-      src: path.resolve(__dirname, 'src'),
-      utils: path.resolve(__dirname, 'src/utils/'),
-      components: path.resolve(__dirname, 'src/components'),
-      styles: path.resolve(__dirname, 'src/styles/')
-    },
-    extensions: ['.ts', '.tsx', '.js', '.json']
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.json']
   },
-
-  mode: 'development',
 
   module: {
     rules: [
       {
         test: /\.s?css$/,
-        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
+        use: [
+          'style-loader',
+          'css-loader',
+          'postcss-loader',
+          'sass-loader'
+        ]
       },
       {
         test: /\.(png|jpe?g|gif|svg|mp3|mp4|mov|wav|wma|avi|flv)$/i,
@@ -52,7 +50,10 @@ module.exports = {
       {
         test: /\.(js|ts|jsx|tsx)$/,
         exclude: /node_modules/,
-        use: ['babel-loader', 'ts-loader']
+        use: [
+          'babel-loader',
+          'ts-loader'
+        ]
       }
     ]
   },
@@ -60,7 +61,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: path.resolve(__dirname, 'src/index.html')
+      template: path.resolve(cwd, 'src/index.html')
     }),
     new CleanWebpackPlugin(),
     new ProgressBarPlugin({
