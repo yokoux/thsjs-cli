@@ -13,6 +13,7 @@
   "files": [
     "dist"
   ],
+  "types": "./types/index.d.ts",
   "scripts": {
     "clean": "rimraf types dist",
     "docs": "start-storybook -p 6006",
