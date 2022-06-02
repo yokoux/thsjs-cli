@@ -1,12 +1,8 @@
-## theme-chalk
+## ths-mui
 
-> `pnpm run build:css`
+> `pnpm run build:ui`
 
-## ths-ui
-
-> *`cd packages/ths-ui && yarn build`*
 
 ### Create project
 
 > `yarn create vite`
-> `npx sb init --builder @storybook/builder-vite`
