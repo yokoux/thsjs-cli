@@ -1,0 +1,7 @@
+import { SliderClasses } from "@mui/material";
+import { OverridesStyleRules } from "@mui/material/styles/overrides";
+import { DefaultTheme } from "@mui/private-theming";
+
+export const SliderStyleOverrides: Partial<
+  OverridesStyleRules<keyof SliderClasses, "MuiSlider", DefaultTheme>
+> = {};

@@ -4,13 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:ui": "pnpm run build -C packages/ths-ui",
-    "build:css": "pnpm run build -C packages/theme-chalk"
+    "build:ui": "pnpm run build -C packages/ths-mui"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@ths-ui/theme-chalk": "workspace:*"
-  }
+  "license": "ISC"
 }
